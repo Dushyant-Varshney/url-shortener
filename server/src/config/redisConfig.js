@@ -12,6 +12,7 @@ const initializeRedis = async () => {
         redisClient = createClient({
             url: redisUrl,
             socket: {
+                tls:true,
                 reconnectStrategy: (retries) => Math.min(retries * 50, 500),
             },
         });
